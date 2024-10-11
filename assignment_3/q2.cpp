@@ -78,3 +78,49 @@ return 1;
 
 
 void airline(char arr[7][5]){
+    // user can stop process by pressing 'N'
+    cout<<"enter N if you are done!\n";
+    string s;
+    // continue if not interrepted by user or 
+    //there is valid sit in unoccupied state
+    while(true){
+	s=getData(); //get user input
+	//if user input is to stop the process
+	if(s[0]=='N')
+	    break; // break
+
+	//process the request & check according to
+	if(check(arr,s))
+	    display(arr);
+
+	if(allOccupied(arr)){ //if all sits are occupied
+	    cout<<"sorry, no more seats left!!!!!!!!!!1..."<<endl;
+	    break; //break
+	}
+    }
+    cout<<"Thanks, that's all"<<endl; //end of program
+}
+
+int main()
+{
+    //2-D array for storing sit number
+    char arr [7][5];
+    for(int i=0;i<7;i++){
+	//forst column is row number
+	arr[i][0]=i+1+'0';
+	for(int j=1;j<5;j++){
+	    //to represent sit number A,B,C,D respectively
+	    arr[i][j]='A'+j-1;
+	}
+    }
+
+    cout<<"initial seat arrangements........\n";
+    display(arr);
+
+    airline(arr); //airline function
+
+    return 0:
+}
+
+	
+	
