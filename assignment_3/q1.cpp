@@ -70,4 +70,38 @@ int main()
 	    //there are still more numbers to process,
 	    //then display the following message and end the program 
 	    if (i==19 && sum>==10){
+		 printf("integer overflow");
+		 flag=1;
+		 break;
+	    }
 
+	    //if sum greater than 10, then assign carry = 1
+	    if(sum>=10;
+		carry=1;
+		sum=sum-10;
+	    }
+
+	    //else assign carry = 0
+	    else {
+		carry=0;	
+	    }
+	    result[i]=sum;
+	}
+
+	// if there is still a carry after completing the calculation,
+	// then add it as well to the result array
+	if(carry==1){result[i]=carry;}
+
+
+	//printing the result number;
+	if(flag==0){
+
+	    for(i=19;i>=0;i--){
+		if(result[i]!=0) {lastIndex=i;break;}
+	    }
+
+	    for(i=lastIndex;i>=0;i--){printf("%d",result[i]);}
+	}
+
+	return 0;
+}
